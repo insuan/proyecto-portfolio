@@ -4,45 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="src/output.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="text-indigo-50">
-    <!-- <h1 class="text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Bienvenido a mi sitio web</h1>
-    <div class="h-dvh w-dvw bg-slate-500/60 fixed top-0 left-0 backdrop-blur-sm"></div> -->
-    <header class="bg-indigo-950">
-        <nav class="h-16 flex justify-between items-center shadow-sm sticky top-0 sm:px-24">
-          <button class="absolute left-2 sm:hidden">
-            <svg 
-              class="h-8 w-8"  width="50" height="50" viewBox="0 0 24 24" 
-              stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
-              <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="4" y1="6" x2="20" y2="6" />  
-              <line x1="4" y1="12" x2="20" y2="12" />  <line x1="4" y1="18" x2="20" y2="18" />
-          </svg>
-          </button>
-          <h1 class="mx-auto bg-gradient-to-r from-[#ff5d50] to-[#d31166] text-transparent bg-clip-text text-2xl font-black sm:mx-0"> 
-            &lt;Nicolas Insua /&gt;
-          </h1>
+  <header class="bg-indigo-950">
+    <nav x-data="{ menu: false }"
+      class="h-16 flex justify-between items-center shadow-sm sticky top-0 sm:px-24 relative">
 
-          <ul class="absolute hidden top-0 flex flex-col justify-around items-center text-2xl font-bold 
-                    h-dvh w-dvw bg-indigo-950 sm:static sm:flex sm:h-auto sm:w-1/2 sm:flex-row sm:justify-between 
-                    sm:bg-transparent sm:text-sm sm:text-left">
-            <li>
-              <a href="#about-me">Sobre mi</a>
-            </li>
-            <li>
-              <a href="#projects">Proyectos</a>
-            </li>
-            <li>
-              <a href="#reviews">Reseñas</a>
-            </li>
-              <button class="sm:hidden">
-                <svg class="h-8 w-8"  width="50" height="50" viewBox="0 0 24 24" 
-                  stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" 
-                  stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  
-                  <line x1="18" y1="6" x2="6" y2="18" />  <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-              </button>
-          </ul>
-        </nav>
-    </header>
+      <button @click="menu = !menu" class="absolute left-2 sm:hidden">
+        <svg class="h-8 w-8" width="50" height="50" viewBox="0 0 24 24"
+          stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z"/>
+          <line x1="4" y1="6" x2="20" y2="6" />
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="18" x2="20" y2="18" />
+        </svg>
+      </button>
+
+      <h1 class="mx-auto bg-gradient-to-r from-[#ff5d50] to-[#d31166] text-transparent bg-clip-text text-2xl font-black sm:mx-0">
+        &lt;Nicolas Insua /&gt;
+      </h1>
+
+      <ul
+        :class="menu ? 'flex' : 'hidden'"
+        class="absolute top-0 left-0 flex-col justify-around items-center text-2xl font-bold
+               h-dvh w-dvw bg-indigo-950
+               sm:static sm:flex sm:h-auto sm:w-1/2 sm:flex-row sm:justify-between
+               sm:bg-transparent sm:text-sm sm:text-left">
+        <li><a href="#about-me">Sobre mi</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#reviews">Reseñas</a></li>
+
+        <button @click="menu = false" class="sm:hidden">
+          <svg class="h-8 w-8" width="50" height="50" viewBox="0 0 24 24"
+            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z"/>
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </ul>
+    </nav>
+  </header>
 </body>
 </html>
