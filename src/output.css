@@ -230,9 +230,6 @@
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
-  .h-\[1000px\] {
-    height: 1000px;
-  }
   .h-dvh {
     height: 100dvh;
   }
