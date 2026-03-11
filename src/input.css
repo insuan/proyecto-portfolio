@@ -2,4 +2,36 @@
 
 @theme{
     --color-cyber: #AB9AFA;
+
+    --animate-wiggle: wiggle 1s ease-in-out infinite;
+    --animate-menu-in: menu-in 0.3s ease forwards;
+    --animate-menu-out: menu-out 0.3s ease forwards;
+    
+    @keyframes wiggle {
+        0%,
+        100% {
+            transform: rotate(-3deg);
+        }
+        50% {
+            transform: rotate(3deg);
+        }
+    }
+
+    @keyframes menu-in {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes menu-out {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
 }
