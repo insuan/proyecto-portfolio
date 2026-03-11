@@ -4,8 +4,8 @@
     --color-cyber: #AB9AFA;
 
     --animate-wiggle: wiggle 1s ease-in-out infinite;
-    --animate-menu-in: menu-in 0.3s ease forwards;
-    --animate-menu-out: menu-out 0.3s ease forwards;
+    --animate-menu-in: menu-in 0.5s ease-in-out;
+    --animate-menu-out: menu-out 0.5s ease-in-out;
     
     @keyframes wiggle {
         0%,

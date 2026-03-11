@@ -7,11 +7,11 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="text-indigo-50">
-  <header class="bg-indigo-950">
-    <nav x-data="{ menu: false }"
+  <header id="header" class="bg-indigo-950">
+    <nav
       class="h-16 flex justify-between items-center shadow-sm sticky top-0 sm:px-24 relative">
 
-      <button @click="menu = !menu" class="absolute left-2 sm:hidden">
+      <button id="menu-button" class="absolute left-2 sm:hidden">
         <svg class="h-8 w-8" width="50" height="50" viewBox="0 0 24 24"
           stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z"/>
@@ -25,17 +25,16 @@
         &lt;Nicolas Insua /&gt;
       </h1>
 
-      <ul
-        :class="menu ? 'flex' : 'hidden'"
-        class="absolute top-0 left-0 flex-col justify-around items-center text-2xl font-bold
+      <ul id="nav-menu" 
+        class="absolute hidden animate-menu-in top-0 left-0 flex-col justify-around items-center text-2xl font-bold
                h-dvh w-dvw bg-indigo-950
                sm:static sm:flex sm:h-auto sm:w-1/2 sm:flex-row sm:justify-between
                sm:bg-transparent sm:text-sm sm:text-left">
         <li><a href="#about-me">Sobre mi</a></li>
         <li><a href="#projects">Proyectos</a></li>
         <li><a href="#reviews">Reseñas</a></li>
-
-        <button @click="menu = false" class="sm:hidden">
+        <li>
+        <button class="sm:hidden">
           <svg class="h-8 w-8" width="50" height="50" viewBox="0 0 24 24"
             stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
             stroke-linejoin="round">
@@ -44,8 +43,10 @@
             <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         </button>
+        </li>
       </ul>
     </nav>
   </header>
 </body>
+<script src="src/scripts/navigation.js"></script>
 </html>

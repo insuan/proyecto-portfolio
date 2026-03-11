@@ -16,12 +16,10 @@
     --text-2xl--line-height: calc(2 / 1.5);
     --font-weight-bold: 700;
     --font-weight-black: 900;
-    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --animate-wiggle: wiggle 1s ease-in-out infinite;
-    --animate-menu-in: menu-in 0.3s ease forwards;
-    --animate-menu-out: menu-out 0.3s ease forwards;
+    --animate-menu-in: menu-in 0.5s ease-in-out;
+    --animate-menu-out: menu-out 0.5s ease-in-out;
   }
 }
 @layer base {
@@ -230,9 +228,6 @@
   .animate-menu-out {
     animation: var(--animate-menu-out);
   }
-  .animate-wiggle {
-    animation: var(--animate-wiggle);
-  }
   .resize {
     resize: both;
   }
@@ -298,10 +293,6 @@
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
-  }
-  .ease-in-out {
-    --tw-ease: var(--ease-in-out);
-    transition-timing-function: var(--ease-in-out);
   }
   .sm\:static {
     @media (width >= 40rem) {
@@ -506,18 +497,6 @@
   inherits: false;
   initial-value: solid;
 }
-@property --tw-ease {
-  syntax: "*";
-  inherits: false;
-}
-@keyframes wiggle {
-  0%, 100% {
-    transform: rotate(-3deg);
-  }
-  50% {
-    transform: rotate(3deg);
-  }
-}
 @keyframes menu-in {
   0% {
     transform: translateX(-100%);
@@ -568,7 +547,6 @@
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
       --tw-outline-style: solid;
-      --tw-ease: initial;
     }
   }
 }
